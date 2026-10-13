@@ -111,7 +111,7 @@ git push -u origin main
 
 Vào Actions → Build Image and Deploy to VPS. Kiểm tra `build-image` xanh rồi `deploy-vps` xanh. Trong bước Deploy over SSH, cần thấy đăng nhập GHCR thành công, pull image, container chạy và response health.
 
-Workflow tạo image cho cả amd64 và arm64. Thời gian build lần đầu có thể lâu hơn. Nếu test/build lỗi thì deploy tự bị bỏ qua.
+Workflow tạo image cho `linux/amd64`, đúng kiến trúc VPS đang triển khai. Không build thêm arm64 vì base image Alpine Java 17 dùng ở bài này không hỗ trợ kiến trúc đó. Nếu test/build lỗi thì deploy tự bị bỏ qua.
 
 ## 6. Kiểm tra ứng dụng
 
